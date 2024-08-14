@@ -1,0 +1,59 @@
+<!-- bestsellers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Monospace', monospace;
+            background-color: #d2cece;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        h3{
+           color: rgba(138, 108, 99, 0.91);
+           }
+    </style>
+    <title>Hindi AudioBooks - Genre Quest</title>
+</head>
+<body>
+<section id="hindiaudiobooks">
+    <h2>Hindi AudioBooks</h2>
+    <ul>
+        {% for index in range(book_titles_hindi|length) %}
+        <li>
+            <h3><u>{{ book_titles_hindi[index] }}</u></h3>
+            {% if texts[index] %}
+                <p>{{ texts[index] }}</p>
+            {% endif %}
+            {% if author_name[index] %}
+                <p>Author: {{ author_name[index] }}</p>
+            {% endif %}
+            {% if duration[index] %}
+                <p>Duration: {{ duration[index] }}</p>
+            {% endif %}
+            {% if language[index] %}
+                <p>Language: {{ language[index] }}</p>
+            {% endif %}
+            {% if rating[index] %}
+                <p>Rating: {{ rating[index] }}</p>
+            {% endif %}
+            {% if number[index] %}
+                <p>Number of Ratings: {{ number[index] }}</p>
+            {% endif %}
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+</body>
+</html>
